@@ -1,0 +1,132 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100wv;
+  height: 100px;
+}
+
+.header-title {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+body {
+  z-index: 1;
+  position: relative;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.timer-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  color: white;
+  width: 150px;
+  height: 30px;
+  background-color: rgb(96, 96, 96);
+  border-radius: 50px;
+}
+
+.timer > span {
+  font-size: 25px;
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.board-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgb(212, 212, 212);
+  font-size: 35px;
+  font-weight: bold;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 30px;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.keyboard-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: rgb(197, 197, 197);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.keyboard-block-big1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: rgb(197, 197, 197);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.keyboard-block-big2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: rgb(197, 197, 197);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+#gameOver {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 100px;
+  background-color: rgb(146, 114, 160);
+  font-size: 30px;
+  font-weight: bold;
+  z-index: 10;
+  position: absolute;
+  top: 37vh;
+  left: 36vw;
+  border-radius: 20px;
+  color: white;
+}
