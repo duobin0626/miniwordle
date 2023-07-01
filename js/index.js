@@ -10,7 +10,13 @@ function appStart() {
     index = 0;
   };
 
+  const 게임_종료 = () => {
+    window.removeEventListener("keydown", handleKeydown);
+  };
+
   const handleEnterKey = () => {
+    let 맞은_갯수 = 0;
+
     //정답확인
     for (let i = 0; i < 5; i++) {
       const block = document.querySelector(
@@ -18,13 +24,16 @@ function appStart() {
       );
       const 입력한_글자 = block.innerText;
       const 정답_글자 = 정답[i];
-      if (입력한_글자 === 정답_글자) block.style.background = "#6AAA64";
-      else if (정답.includes(입력한_글자)) block.style.background = "#C9B458";
+      if (입력한_글자 === 정답_글자) {
+        맞은_갯수 += 1;
+        block.style.background = "#6AAA64";
+      } else if (정답.includes(입력한_글자)) block.style.background = "#C9B458";
       else block.style.background = "#787C7E";
 
       block.style.color = "white";
     }
-    nextLine();
+    if (맞은_갯수 === 5) 게임_종료();
+    else nextLine();
   };
 
   const handleKeydown = (e) => {
