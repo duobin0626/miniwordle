@@ -1,4 +1,4 @@
-const 정답 = "APPLE";
+const 정답 = "MAPLE";
 
 let index = 0; // index : 입력 칸 (한칸 단위)
 let attempts = 0; // attempts : 몇번 시도 했는지 (한줄 단위)
