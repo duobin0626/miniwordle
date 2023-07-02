@@ -1,4 +1,7 @@
-const 정답 = "MAPLE";
+// python을 이용하여 서버에서 주는 정답으로 업데이트 해보기 위하여
+// 1. 기존 정답 삭제처리
+// 2. handleEnterKey() 내부에서 다시 선언후 수정
+// const 정답 = "MAPLE";
 
 let index = 0; // index : 입력 칸 (한칸 단위)
 let attempts = 0; // attempts : 몇번 시도 했는지 (한줄 단위)
@@ -27,8 +30,19 @@ function appStart() {
     index = 0;
   };
 
-  const handleEnterKey = () => {
+  const handleEnterKey = async () => {
     let 맞은_갯수 = 0;
+    // 서버에서 정답을 받기 위한 비동기 처리(async await).
+    // fetch() : javascript에서 서버로 요청을 보낼 때 쓰는 함수
+    // 우리가 원하는 값만 추출하려면 json으로 변경 해줘야한다.
+    // json : javascript object notation
+    // json()으로 변경하는걸 기다려주면(await) 정답으로 변경된다.
+
+    /* 서버에서 정답을 받아오는 코드 */
+    const 응답 = await fetch("/answer");
+    const 정답_객체 = await 응답.json();
+    const 정답 = 정답_객체.answer;
+    /*  */
 
     //정답확인
     for (let i = 0; i < 5; i++) {
